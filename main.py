@@ -1,5 +1,7 @@
 import random
+
 print("----- Welcome to RoastMatch -----")
+
 roast = [
     "Yeh dono ek dusre ko dekh ke hi bolenge 'yaar thoda space de na'.\n",
     "Inka future: ek dusre ko block karke mutual friends se status "
