@@ -63,6 +63,7 @@ class RoastEngine:
     ]
     
     def generate_roast(self, user_1, user_2):
+        """Return roast to game controller."""
         seed = len(user_1) + len(user_2) 
         + ord(user_1[0].lower()) + ord(user_2[0].lower())
 
