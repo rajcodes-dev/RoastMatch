@@ -3,6 +3,34 @@ import random
 class GameController:
     """Control the main game loop."""
 
+    def run(self):
+        """Run the main loop of the game."""
+        print("----- Welcome to RoastMatch -----")
+
+        while(True):
+
+            user_1 = input("Enter first name: \n").strip().capitalize()
+            user_2 = input("Enter second name: \n").strip().capitalize()
+
+            if not user_1 or not user_2:
+                print("What are you doing man? Atleast input the name so that i " \
+                "can predict your broken relationship.\n")
+                continue
+
+            else:
+                print(roast_engine.generate_roast(user_1, user_2))
+
+            play = input("Do you want to play again(y/n):\n")
+            print('\n')
+
+            if play.lower() == 'n':
+                    print("Goodbye! Be happy with your relationship.\n")
+                    break
+            print("Oho!, You dare to play this game again.")
+
+class RoastEngine:
+    """Generate and maintain the roast."""
+
     roasts = [
         "Yeh dono ek dusre ko dekh ke hi bolenge 'yaar thoda space de na'.\n",
         "Inka future: ek dusre ko block karke mutual friends se status "
@@ -32,36 +60,15 @@ class GameController:
         "Made for each other — dono ko 'sorry' bolna zindagi mein ek baar "
         "bhi nahi aayega.\n"
     ]
+    
+    def generate_roast(self, user_1, user_2):
+        seed = len(user_1) + len(user_2) 
+        + ord(user_1[0].lower()) + ord(user_2[0].lower())
 
-    def run(self):
-        print("----- Welcome to RoastMatch -----")
-
-        while(True):
-
-            user_1 = input("Enter first name: \n").strip().capitalize()
-            user_2 = input("Enter second name: \n").strip().capitalize()
-
-            if not user_1 or not user_2:
-                print("What are you doing man? Atleast input the name so that i " \
-                "can predict your broken relationship.\n")
-                continue
-
-            else:
-                seed = len(user_1) + len(user_2) 
-                + ord(user_1[0].lower()) + ord(user_2[0].lower())
-
-                selected_roast = seed % len(self.roasts)
-
-                print(self.roasts[selected_roast])
-
-            play = input("Do you want to play again(y/n):\n")
-            print('\n')
-
-            if play.lower() == 'n':
-                    print("Goodbye! Be happy with your relationship.\n")
-                    break
-            print("Oho!, You dare to play this game again.")
+        selected_roast = seed % len(self.roasts)
+        return self.roasts[selected_roast]
 
 if __name__ == "__main__":
     controller = GameController()
+    roast_engine = RoastEngine()
     controller.run()
