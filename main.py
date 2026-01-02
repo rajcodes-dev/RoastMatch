@@ -1,5 +1,3 @@
-import random
-
 class GameController:
     """Control the main game loop."""
 
@@ -16,8 +14,8 @@ class GameController:
             user_2 = input("Enter second name: \n").strip().capitalize()
 
             if not user_1 or not user_2:
-                print("What are you doing man? Atleast input the name so that i " \
-                "can predict your broken relationship.\n")
+                print("What are you doing man? Atleast input the name so" 
+                      " that i can predict your broken relationship.\n")
                 continue
 
             else:
