@@ -3,6 +3,9 @@ import random
 class GameController:
     """Control the main game loop."""
 
+    def __init__(self, roast_engine):
+        self.roast_engine = roast_engine
+
     def run(self):
         """Run the main loop of the game."""
         print("----- Welcome to RoastMatch -----")
@@ -18,7 +21,7 @@ class GameController:
                 continue
 
             else:
-                print(roast_engine.generate_roast(user_1, user_2))
+                print(self.roast_engine.generate_roast(user_1, user_2))
 
             play = input("Do you want to play again(y/n):\n")
             print('\n')
@@ -69,6 +72,6 @@ class RoastEngine:
         return self.roasts[selected_roast]
 
 if __name__ == "__main__":
-    controller = GameController()
     roast_engine = RoastEngine()
+    controller = GameController(roast_engine)
     controller.run()
