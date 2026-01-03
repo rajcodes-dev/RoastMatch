@@ -39,7 +39,8 @@ class RoastEngine:
     "Inka idea of date: ek dusre ka story dekh ke like nahi karna.\n",
     "Saath mein plan banate hain aur last minute 'thak gaya' bol dete hain.\n",
     "Inka love language: 'seen' pe chod dena.\n",
-    "Yeh dono fight ke baad bhi mutual friends se ek dusre ki khabar lete hain.\n",
+    "Yeh dono fight ke baad bhi mutual friends se ek dusre ki khabar "\
+    "lete hain.\n",
     "Inka future: shaadi ke baad bhi alag-alag Netflix accounts.\n",
     "Flirting style: 'haha' react kar ke conversation khatam.\n",
     "Yeh dono birthday wish mein bhi copy-paste karte hain.\n",
@@ -137,7 +138,8 @@ class UserInterface:
         print(roast.strip().center(70))
         print()
         print("═" * 70)
-        print("😈 Share kar apne doston ke saath... agar himmat hai! 😏".center(70))
+        print("😈 Share kar apne doston ke saath... "\
+              "agar himmat hai! 😏".center(70))
         print("═" * 70)
         print()
 
