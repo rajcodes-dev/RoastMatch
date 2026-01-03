@@ -15,7 +15,10 @@ Perfect mix of humor, sarcasm, and desi relatability
 - Replayable with sarcastic messages
 
 ## **Screenshot / Example Output**
-
+![RoastMatch Gameplay](images/1.png)
+![RoastMatch Gameplay](images/2.png)
+![RoastMatch Gameplay](images/3.png)
+![RoastMatch Gameplay](images/4.png)
 
 ## **How to Run**
 
@@ -44,4 +47,4 @@ No external libraries — pure Python!
 Raj Tiwari / rajcodes-dev
 Feel free to fork, share, and roast your friends!
 
-###***Warning: May cause laughter, eye-rolls, and minor emotional damage.*** ###
+### ***Warning: May cause laughter, eye-rolls, and minor emotional damage.*** ###
