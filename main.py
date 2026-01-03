@@ -13,18 +13,18 @@ class GameController:
 
             user_1, user_2 = user_interface.users()
 
-            user_interface.loading()
-
             if not user_1 or not user_2:
                 user_interface.empty_names()
                 continue
 
             else:
-                user_interface.show_roast(user_1, user_2)
+                user_interface.loading()
+                roast = roast_engine.generate_roast(user_1, user_2)
+                user_interface.show_roast(roast)
 
             play = user_interface.play_again()
 
-            if play.lower() == 'n':
+            if play == 'n':
                     user_interface.show_goodbye()
                     break
             user_interface.show_continue_message()
@@ -88,14 +88,14 @@ class UserInterface:
     def loading(self):
         print("Analyzing.......\n")
 
-    def show_roast(self, user_1, user_2):
-        print(roast_engine.generate_roast(user_1, user_2))
+    def show_roast(self, roast):
+        print(roast)
 
     def show_goodbye(self):
         print("Goodbye! Be happy with your relationship.\n")
 
     def play_again(self):
-        return input("Do you want to play again(y/n):\n")
+        return input("Do you want to play again(y/n):\n").lower()
 
     def show_continue_message(self):
         print("Oho!, You dare to play this game again.")
