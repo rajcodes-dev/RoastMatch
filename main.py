@@ -1,3 +1,5 @@
+# Relationship Predictor Game (RoastMatch)
+
 class GameController:
     """Control the main game loop."""
 
@@ -91,14 +93,14 @@ class UserInterface:
     def show_roast(self, roast):
         print(roast)
 
-    def show_goodbye(self):
-        print("Goodbye! Be happy with your relationship.\n")
-
     def play_again(self):
         return input("Do you want to play again(y/n):\n").lower()
 
     def show_continue_message(self):
         print("Oho!, You dare to play this game again.")
+
+    def show_goodbye(self):
+        print("Goodbye! Be happy with your relationship.\n")
 
 if __name__ == "__main__":
     roast_engine = RoastEngine()
