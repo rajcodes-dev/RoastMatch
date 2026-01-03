@@ -1,33 +1,33 @@
 class GameController:
     """Control the main game loop."""
 
-    def __init__(self, roast_engine):
+    def __init__(self, roast_engine, user_interface):
         self.roast_engine = roast_engine
+        self.user_interface = user_interface
 
     def run(self):
         """Run the main loop of the game."""
-        print("----- Welcome to RoastMatch -----")
-
+        
+        user_interface.greet()
         while(True):
 
-            user_1 = input("Enter first name: \n").strip().capitalize()
-            user_2 = input("Enter second name: \n").strip().capitalize()
+            user_1, user_2 = user_interface.users()
+
+            user_interface.loading()
 
             if not user_1 or not user_2:
-                print("What are you doing man? Atleast input the name so" 
-                      " that i can predict your broken relationship.\n")
+                user_interface.empty_names()
                 continue
 
             else:
-                print(self.roast_engine.generate_roast(user_1, user_2))
+                user_interface.show_roast(user_1, user_2)
 
-            play = input("Do you want to play again(y/n):\n")
-            print('\n')
+            play = user_interface.play_again()
 
             if play.lower() == 'n':
-                    print("Goodbye! Be happy with your relationship.\n")
+                    user_interface.show_goodbye()
                     break
-            print("Oho!, You dare to play this game again.")
+            user_interface.show_continue_message()
 
 class RoastEngine:
     """Generate and maintain the roast."""
@@ -70,7 +70,38 @@ class RoastEngine:
         selected_roast = seed % len(self.roasts)
         return self.roasts[selected_roast]
 
+class UserInterface:
+    """Display the roast and overall user interface."""
+
+    def greet(self):
+        print("----- Welcome to RoastMatch -----")  
+
+    def users(self):
+        user1 = input("Enter first name: \n").strip().capitalize()
+        user2 = input("Enter second name: \n").strip().capitalize()
+        return user1, user2
+
+    def empty_names(self):
+        print("What are you doing man? Atleast input the name so" 
+                      " that i can predict your broken relationship.\n")
+    
+    def loading(self):
+        print("Analyzing.......\n")
+
+    def show_roast(self, user_1, user_2):
+        print(roast_engine.generate_roast(user_1, user_2))
+
+    def show_goodbye(self):
+        print("Goodbye! Be happy with your relationship.\n")
+
+    def play_again(self):
+        return input("Do you want to play again(y/n):\n")
+
+    def show_continue_message(self):
+        print("Oho!, You dare to play this game again.")
+
 if __name__ == "__main__":
     roast_engine = RoastEngine()
-    controller = GameController(roast_engine)
+    user_interface = UserInterface()
+    controller = GameController(roast_engine, user_interface)
     controller.run()
