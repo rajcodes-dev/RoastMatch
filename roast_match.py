@@ -1,5 +1,5 @@
 # Relationship Predictor Game (RoastMatch)
-
+import time
 class GameController:
     """Control the main game loop."""
 
@@ -107,16 +107,26 @@ class UserInterface:
     """Display the roast and overall user interface."""
 
     def greet(self):
+        time.sleep(0.5)
         print("=" * 60)
+        time.sleep(0.5)
         print("🔥🔥 ROASTMATCH 🔥🔥".center(60))
+        time.sleep(0.5)
         print("The most savage relationship & friendship roaster".center(60))
+        time.sleep(0.5)
         print("Do naam daalo... agar himmat hai toh 😈".center(60))
+        time.sleep(0.5)
         print("=" * 60)
+        time.sleep(0.5)
         print()  
+        time.sleep(0.5)
 
     def users(self):
+        time.sleep(0.5)
         user1 = input("😈 Pehla victim ka naam daal: ").strip().capitalize()
+        time.sleep(0.5)
         user2 = input("😈 Dusra victim ka naam daal: ").strip().capitalize()
+        time.sleep(0.5)
         return user1, user2
 
     # def empty_names(self):
@@ -129,35 +139,56 @@ class UserInterface:
                                      )
     
     def loading(self):
+        time.sleep(0.5)
         print("\n🔮 Compatibility analyze kar raha hoon...")
+        time.sleep(0.5)
         print("Ancient shade scrolls khol raha hoon...")
+        time.sleep(0.5)
         print("Maximum emotional damage calculate ho raha hai...")
+        time.sleep(0.5)
         print("Ultimate burn ready kar raha hoon... 💀\n")
+        time.sleep(0.5)
 
     def show_roast(self, user_1, user_2, roast):
+        time.sleep(0.5)
         print("═" * 70)
+        time.sleep(0.5)
         print("💥💥 ULTIMATE ROAST RESULT 💥💥".center(70))
+        time.sleep(0.5)
         print(f"🔥 {user_1} + {user_2} 🔥".center(70))
+        time.sleep(0.5)
         print("═" * 70)
+        time.sleep(0.5)
         print()
+        time.sleep(0.5)
         print(roast.strip().center(70))
         print()
+        time.sleep(0.5)
         print("═" * 70)
+        time.sleep(0.5)
         print("😈 Share kar apne doston ke saath... "
               "agar himmat hai! 😏".center(70)
               )
+        time.sleep(0.5)
         print("═" * 70)
+        time.sleep(0.5)
         print()
+        time.sleep(0.5)
 
     play_again = lambda self: input("🔥 Ek aur pair ki beizzati "
         "karwaayega? (y/n): ").strip().lower()
 
     def show_continue_message(self):
+        time.sleep(0.5)
         print("Arre waah! Phir se apni izzat lootne aaya?")
+        time.sleep(0.5)
         print("Confidence level: PRO MAX 😈🔥\n")
+        time.sleep(0.5)
 
     def show_goodbye(self):
+        time.sleep(0.5)
         print("👋 Bhaag gaya? Smart move tha bro.")
+        time.sleep(0.5)
         print("Goodbye! Relationship mein khush raho... "
               "ya try karte raho 😘\n"
               )
