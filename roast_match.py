@@ -39,7 +39,7 @@ class RoastEngine:
     "Inka idea of date: ek dusre ka story dekh ke like nahi karna.\n",
     "Saath mein plan banate hain aur last minute 'thak gaya' bol dete hain.\n",
     "Inka love language: 'seen' pe chod dena.\n",
-    "Yeh dono fight ke baad bhi mutual friends se ek dusre ki khabar "\
+    "Yeh dono fight ke baad bhi mutual friends se ek dusre ki khabar "
     "lete hain.\n",
     "Inka future: shaadi ke baad bhi alag-alag Netflix accounts.\n",
     "Flirting style: 'haha' react kar ke conversation khatam.\n",
@@ -119,9 +119,14 @@ class UserInterface:
         user2 = input("😈 Dusra victim ka naam daal: ").strip().capitalize()
         return user1, user2
 
-    def empty_names(self):
-        print("Arre bhai! Invisible naam nahi chalega 💀")
-        print("Proper naam daal na, warna kaise roast karun? 😏\n")
+    # def empty_names(self):
+    #     print("Arre bhai! Invisible naam nahi chalega 💀")
+    #     print("Proper naam daal na, warna kaise roast karun? 😏\n")
+
+    empty_names = lambda self: print("Arre bhai! Invisible naam nahi "
+                                     "chalega 💀 \nProper naam daal na, "
+                                     "warna kaise roast karun? 😏\n"
+                                     )
     
     def loading(self):
         print("\n🔮 Compatibility analyze kar raha hoon...")
@@ -138,13 +143,13 @@ class UserInterface:
         print(roast.strip().center(70))
         print()
         print("═" * 70)
-        print("😈 Share kar apne doston ke saath... "\
-              "agar himmat hai! 😏".center(70))
+        print("😈 Share kar apne doston ke saath... "
+              "agar himmat hai! 😏".center(70)
+              )
         print("═" * 70)
         print()
 
-    def play_again(self):
-        return input("🔥 Ek aur pair ki beizzati " \
+    play_again = lambda self: input("🔥 Ek aur pair ki beizzati "
         "karwaayega? (y/n): ").strip().lower()
 
     def show_continue_message(self):
@@ -154,7 +159,8 @@ class UserInterface:
     def show_goodbye(self):
         print("👋 Bhaag gaya? Smart move tha bro.")
         print("Goodbye! Relationship mein khush raho... "
-              "ya try karte raho 😘\n")
+              "ya try karte raho 😘\n"
+              )
 
 if __name__ == "__main__":
     roast_engine = RoastEngine()
