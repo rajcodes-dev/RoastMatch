@@ -43,6 +43,18 @@ This project was created to practice:
 
 No external libraries — pure Python!
 
+## **Project Milestones**
+1. v1.0 Completed — First fully working version
+2. Added 50+ handcrafted Hinglish roasts
+3. Implemented deterministic compatibility hashing
+4. Added complete OOP architecture
+5. Created dramatic UI flow
+6. Added input validation & replay system
+7. Added screenshots & demo output in README
+
+## **Outcome**
+This will mark my first documented achievement on GitHub and make the repository more professional and structured.
+
 ## **Made By**
 Raj Tiwari / rajcodes-dev
 Feel free to fork, share, and roast your friends!
